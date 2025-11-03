@@ -8,6 +8,7 @@ dataset = "dataset/raw/test"
 data_frames = []
 
 for target, folder in enumerate(listdir(dataset)):
+    print(folder)
     for file in listdir(join(dataset, folder)):
         file_path = join(dataset, folder, file)
 
