@@ -9,7 +9,7 @@ from sklearn.metrics import confusion_matrix
 
 MODEL_PATH = "models/motor_model.keras"
 SCALER_PATH = "models/scaler.pkl"
-DATA_FOLDER = "Dataset"
+DATA_FOLDER = "."
 DATA_COLUMNS = ["ax", "ay", "az", "gx", "gy", "gz"]
 
 class_name = ["Motor OFF", "Motor On", "No Fan", "Bad Fan"]
