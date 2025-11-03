@@ -3,7 +3,7 @@ from os import listdir
 from os.path import join
 import pandas as pd
 
-dataset = "dataset/raw/test"
+dataset = "dataset/raw/train"
 
 data_frames = []
 

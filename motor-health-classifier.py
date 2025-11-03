@@ -84,7 +84,7 @@ print(f"Class Weights: {class_weight_dict}")
 # --- Build Optimized CNN Model ---
 def build_simple_cnn(input_shape=(TIME_STEPS, N_FEATURES, 1), num_classes=4):
     l2_rate = 1e-4
-    model = Sequential([
+    motor_model = Sequential([
         Conv2D(24, (7, 3), padding='same', kernel_regularizer=l2(l2_rate),
                input_shape=input_shape, name="conv1"),
         BatchNormalization(name="bn1"), Activation('relu', name="relu1"),
@@ -107,9 +107,9 @@ def build_simple_cnn(input_shape=(TIME_STEPS, N_FEATURES, 1), num_classes=4):
         Dropout(0.5, name="dropout"),
         Dense(num_classes, activation='softmax', name="output")
     ])
-    return model
+    return motor_model
 
-# --- Compile and Train ---
+
 model = build_simple_cnn(num_classes=num_classes)
 model.compile(optimizer=tf.keras.optimizers.Adam(0.001),
               loss='categorical_crossentropy',
